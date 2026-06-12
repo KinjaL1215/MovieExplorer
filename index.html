@@ -3,22 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Details</title>
+    <title>CineVerse // Movie Explorer</title>
+    <!-- Google Fonts: Outfit for Headings, Inter for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="container">
-    <h2>Get Movie Details</h2>
-
-    <div class="input-box">
-        <input type="text" id="movie" placeholder="Enter movie name">
-        <button>Get Details</button>
+    <!-- Decorative background elements for deep cinematic styling -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-film logo-icon"></i>
+                <h1>Cine<span>Verse</span></h1>
+            </div>
+            <p class="subtitle">Your ultimate gateway to cinema details</p>
+        </header>
+        <section class="search-section">
+            <div class="search-box-wrapper">
+                <div class="search-input-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="movie" placeholder="Search for movies, TV shows..." autocomplete="off">
+                    <button id="clear-search" class="clear-btn" aria-label="Clear search" style="display: none;">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <button id="search-btn" class="search-button">
+                    <span>Search</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <!-- Search History Chips -->
+            <div class="history-container" id="history-container" style="display: none;">
+                <span class="history-label"><i class="fa-solid fa-clock-rotate-left"></i> Recent:</span>
+                <div class="history-chips" id="history-chips">
+                    <!-- Dynamic chips go here -->
+                </div>
+                <button id="clear-history-btn" class="clear-history-btn" title="Clear History">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </div>
+        </section>
+        <main class="movie-output-wrapper">
+            <div id="movieDisplay" class="output">
+                <!-- Default Welcome View -->
+                <div class="welcome-state">
+                    <div class="welcome-illustration">
+                        <i class="fa-solid fa-clapperboard welcome-icon"></i>
+                    </div>
+                    <h2>Discover Movies Instantly</h2>
+                    <p>Enter a movie or series title above to fetch detailed ratings, cast lists, box office performance, and plots.</p>
+                    <div class="trending-suggestions">
+                        <span>Try searching:</span>
+                        <div class="suggestion-tags">
+                            <button class="suggestion-tag">Inception</button>
+                            <button class="suggestion-tag">The Dark Knight</button>
+                            <button class="suggestion-tag">Interstellar</button>
+                            <button class="suggestion-tag">Spirited Away</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="app-footer">
+            <p>Powered by <a href="https://www.omdbapi.com/" target="_blank" rel="noopener noreferrer">OMDb API</a> • Created with premium styles</p>
+        </footer>
     </div>
-
-    <div id="movieDisplay" class="output"></div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>
